@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ZonaFitness</title>
+  <title>Zona Fitness</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-
+<%= render :partial => "partials/navigation" %>
 <%= yield %>
-
+<div class="form-group">       
+  <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+  <div class="col-xs-10 col-sm-6 col-md-4 " >
+      <% if notice != nil  %>
+        <div class="alert alert-info" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert != nil  %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>        
+  </div>  
+  <div class="col-xs-1 col-sm-3 col-md-4 "></div>
+</div> 
 </body>
 </html>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-custom">
+  <div class="container">
+
+    <!-- MOBILE-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <%= link_to "Zona Fitness", root_path, :class => "navbar-brand" %>
+    </div>    
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Articulos", articles_path %></li>        
+      </ul> 
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Crear Articulo", new_article_path %></li>        
+      </ul> 
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>        
+          <li><a href="#">Bienvenido <%= current_user.name %></a></li>  
+          <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>  
+        <% else %>
+          <li><%= link_to "log in", new_user_session_path %> </li>  
+          <li><%= link_to "New User", new_user_registration_path %> 
+        <% end %>   </li>             
+      </ul>
+    </div>
+  </div>
+</nav>

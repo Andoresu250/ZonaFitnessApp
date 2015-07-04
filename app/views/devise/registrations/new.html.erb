@@ -1,0 +1,160 @@
+<div class="container-fluid ">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <div class="row">
+      <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+      <div class="col-xs-10 col-sm-6 col-md-4 " >
+        <center>
+              <img src="/logoHD.png" height="350" width="350">             
+        </center>
+      </div>      
+      <div class="col-xs-1 col-sm-3 col-md-4 "></div> 
+    </div>  
+
+    <!--FORM EMAIL-->
+    <div class="form-group">      
+      <div class="row">       
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="input-group">
+              <span class="input-group-addon be-transparent"><i class="fa fa-envelope-o be-white"></i></span>
+              <%= f.email_field :email, autofocus: true, class:"form-control rounded-corners be-transparent be-white placeholder-white", placeholder:"email" %>        
+            <!--<input class="form-control rounded-corners be-transparent be-white placeholder-white" type="text" placeholder="User">-->
+          </div>          
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div> 
+      </div>  
+    </div>
+
+    <!--FORM NOMBRE -->
+    <div class="form-group">      
+      <div class="row">       
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="input-group">
+              <span class="input-group-addon be-transparent"><i class="fa fa-font be-white"></i></span>
+              <%= f.text_field :name, class:"form-control rounded-corners be-transparent be-white placeholder-white", placeholder:"Nombre completo" %>           
+            <!--<input class="form-control rounded-corners be-transparent be-white placeholder-white" type="text" placeholder="User">-->
+          </div>          
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div> 
+      </div>  
+    </div>
+
+    <!--FORM cc-->
+    <div class="form-group">      
+      <div class="row">       
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="input-group">
+              <span class="input-group-addon be-transparent"><i class="fa fa-user be-white"></i></span>
+              <%= f.text_field :cc, class:"form-control rounded-corners be-transparent be-white placeholder-white", placeholder:"Cedula" %>         
+            <!--<input class="form-control rounded-corners be-transparent be-white placeholder-white" type="text" placeholder="User">-->
+          </div>          
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div> 
+      </div>  
+    </div>   
+    
+    <!--FORM PASSWORD-->
+    <div class="form-group">
+      <div class="row">       
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="input-group">           
+            <span class="input-group-addon be-transparent"><i class="fa fa-unlock-alt be-white"></i></span>             
+            <%= f.password_field :password, autocomplete: "off", class:"form-control rounded-corners be-transparent be-white placeholder-white", placeholder:"Password" %>
+            <!--<input class="form-control rounded-corners be-transparent be-white placeholder-white" type="password" placeholder="Pass">-->
+          </div>
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div>     
+      </div>
+    </div>
+
+    <!--FORM PASSWORD CONFIRMATION-->
+    <div class="form-group">
+      <div class="row">       
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="input-group">           
+            <span class="input-group-addon be-transparent"><i class="fa fa-unlock-alt be-white"></i></span>             
+            <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control rounded-corners be-transparent be-white placeholder-white", placeholder:"Password confirmation" %>
+            <!--<input class="form-control rounded-corners be-transparent be-white placeholder-white" type="password" placeholder="Pass">-->
+          </div>
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div>     
+      </div>
+    </div>
+
+    <!--BUTTON Sign Up-->
+    <div class="form-group">
+      <div class="row"> 
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >                    
+          <%= f.submit "Sign Up", class:"btn btn-custom rounded-corners form-control " %>
+          <!--<button type="submit" class="btn btn-custom rounded-corners form-control ">Login</button>-->
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div>         
+      </div>
+    </div> 
+
+    <!--ERRORES-->
+    <% if devise_error_messages! == nil %>
+    <div class="form-group">       
+      <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >
+          <div class="alert alert-danger" role="alert">            
+              <%= devise_error_messages! %>           
+          </div>   
+        </div>  
+      <div class="col-xs-1 col-sm-3 col-md-4 "></div>
+    </div> 
+   <% end %>
+
+     <div class="form-group">
+      <div class="row"> 
+        <div class="col-xs-1 col-sm-3 col-md-4 " ></div>  
+        <div class="col-xs-10 col-sm-6 col-md-4 " >                    
+          <%= render "devise/shared/links" %> 
+        </div>  
+        <div class="col-xs-1 col-sm-3 col-md-4 "></div>         
+      </div>
+    </div> 
+  <% end %>
+
+
+  
+</div>
+
+
+<!--
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+-->
