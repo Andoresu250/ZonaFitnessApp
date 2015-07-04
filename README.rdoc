@@ -2,7 +2,7 @@
 
 Antes que nada:
 
-	*bundle install
+	*bundle install prueba
 
 	*rake db:migrate
 
