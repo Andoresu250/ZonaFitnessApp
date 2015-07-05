@@ -1306,3 +1306,106 @@ Started GET "/assets/back.png" for 127.0.0.1 at 2015-07-04 18:10:30 -0500
 
 
 Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-07-04 18:10:30 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-04 19:17:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+  Rendered partials/_navigation.html.erb (6.0ms)
+Completed 200 OK in 624ms (Views: 555.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/back.png" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-07-04 19:17:22 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-04 19:22:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+  Rendered partials/_navigation.html.erb (6.0ms)
+Completed 200 OK in 458ms (Views: 435.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-07-04 19:22:20 -0500
