@@ -5,6 +5,23 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	protected
+	def authenticate_normal_user!
+		user_signed_in? && current_user.is_normal_user?		
+	end
+
+	def authenticate_trainer!
+		user_signed_in? && current_user.is_trainer?
+	end
+
+	def authenticate_admin!
+		user_signed_in? && current_user.is_admin?
+	end
+
+	def authenticate_super_admin!
+		user_signed_in? && current_user.is_super_admin?
+	end
+
+	protected
   	def configure_permitted_parameters
   		devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :cc, :email, :password, :password_confirmation)}  		
   	end
