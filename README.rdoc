@@ -2,11 +2,10 @@
 
 Antes que nada:
 
-<ul>
-	<li>bundle install prueba</li>
+	*bundle install prueba
 
-	<li>rake db:migrate</li>
-</ul>
+	*rake db:migrate
+
 |-------------------------------------------------------------|
 
 == Update Permisos de usuarios (V4.0)
@@ -16,18 +15,26 @@ Antes que nada:
 	La convencion es:
 
 		*Usuario normal: 1
+
 		*Profesor: >= 2
+
 		*Admin: >=3
+
 		*Super Admin: 4
+
 
 		NOTA: Creo que se puede presentar el caso de que un admin o super admin sea profesor como lo es el hermano de Yesid, ese es el porque de la convencion.
 
 	Funciones:
 
 		*is_normal_user?
+
 		*is_trainer?
+
 		*is_admin?
+
 		*is_super_admin?
+		
 
 		Estas son funciones booleanas que se aplican sobre un "User".
 
