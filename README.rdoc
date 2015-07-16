@@ -2,10 +2,11 @@
 
 Antes que nada:
 
-	*bundle install prueba
+<ul>
+	<li>bundle install prueba</li>
 
-	*rake db:migrate
-
+	<li>rake db:migrate</li>
+</ul>
 |-------------------------------------------------------------|
 
 == Update Permisos de usuarios (V4.0)
