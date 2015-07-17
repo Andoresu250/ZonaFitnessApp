@@ -9,53 +9,53 @@ Antes que nada:
 
 	Exiten 4 tipos de usuarios: normal, instructor, admin y super admin; Para cada uno de estos tipos existe una funcion que verifica a cual o cuales pertenece.
 
-	La convencion es:
+La convencion es:
 
-		- Usuario normal: 1
-		- Profesor: >= 2
-		- Admin: >=3
-		- Super Admin: 4
+- Usuario normal: 1
+- Profesor: >= 2
+- Admin: >=3
+- Super Admin: 4
 
-		NOTA: Creo que se puede presentar el caso de que un admin o super admin sea profesor como lo es el hermano de Yesid, ese es el porque de la convencion.
+NOTA: Creo que se puede presentar el caso de que un admin o super admin sea profesor como lo es el hermano de Yesid, ese es el porque de la convencion.
 
-	Funciones:
+Funciones:
 
-		- is_normal_user?
-		- is_trainer?
-		- is_admin?
-		- is_super_admin?
+- is_normal_user?
+- is_trainer?
+- is_admin?
+- is_super_admin?
 		
 
-		Estas son funciones booleanas que se aplican sobre un "User".
+Estas son funciones booleanas que se aplican sobre un "User".
 
-		Ejemplo:
+Ejemplo:
 
-			$ current_user.is_admin? 
+$ current_user.is_admin? 
 
-			current_user es una variable que almacena el usuario actualmente logueado..
+current_user es una variable que almacena el usuario actualmente logueado..
 
-		Ejemplo(Consola de rails):
+Ejemplo(Consola de rails):
 
-			$ User.where(cc: 1140876239).is_super_admin?
+$ User.where(cc: 1140876239).is_super_admin?
 
-		COMO DAR PERMISOS MANUALMETE(desde la consola de rails):
+COMO DAR PERMISOS MANUALMETE(desde la consola de rails):
 
-			$ User.where(:cc => 1140876239).update_all(:permission_level => 4)
+$ User.where(:cc => 1140876239).update_all(:permission_level => 4)
 
-	Otras Funciones(Controladores):
+Otras Funciones(Controladores):
 
-		- authenticate_normal_user!
-		- authenticate_trainer!
-		- authenticate_admin!
-		- authenticate_super_admin!
+- authenticate_normal_user!
+- authenticate_trainer!
+- authenticate_admin!
+- authenticate_super_admin!
 
-		Metodos creados para la validacion de los permisos en los CallBacks.
+Metodos creados para la validacion de los permisos en los CallBacks.
 
-		Ejemplo:
+Ejemplo:
 
-			$ before_action :authenticate_normal_user!, only [:index,:edit,:delete,:new]
+$ before_action :authenticate_normal_user!, only [:index,:edit,:delete,:new]
 
-			Este seria un ejemplo de CallBack para el controlador de las clases.
+Este seria un ejemplo de CallBack para el controlador de las clases.
 
 
 
