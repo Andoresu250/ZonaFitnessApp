@@ -1,14 +1,11 @@
-== README
+= \README
 
-Antes que nada:
+> Antes que nada:
 
-	*bundle install prueba
+- bundle install prueba
+- rake db:migrate
 
-	*rake db:migrate
-
-|-------------------------------------------------------------|
-
-== Update Permisos de usuarios (V4.0)
+### Update Permisos de usuarios (V4.0)
 
 	Exiten 4 tipos de usuarios: normal, instructor, admin y super admin; Para cada uno de estos tipos existe una funcion que verifica a cual o cuales pertenece.
 
