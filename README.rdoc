@@ -30,17 +30,17 @@ Estas son funciones booleanas que se aplican sobre un "User".
 
 Ejemplo:
 
-$ current_user.is_admin? 
+- current_user.is_admin? 
 
 current_user es una variable que almacena el usuario actualmente logueado..
 
 Ejemplo(Consola de rails):
 
-$ User.where(cc: 1140876239).is_super_admin?
+- User.where(cc: 1140876239).is_super_admin?
 
 COMO DAR PERMISOS MANUALMETE(desde la consola de rails):
 
-$ User.where(:cc => 1140876239).update_all(:permission_level => 4)
+- User.where(:cc => 1140876239).update_all(:permission_level => 4)
 
 Otras Funciones(Controladores):
 
@@ -53,7 +53,7 @@ Metodos creados para la validacion de los permisos en los CallBacks.
 
 Ejemplo:
 
-$ before_action :authenticate_normal_user!, only [:index,:edit,:delete,:new]
+- before_action :authenticate_normal_user!, only [:index,:edit,:delete,:new]
 
 Este seria un ejemplo de CallBack para el controlador de las clases.
 
