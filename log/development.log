@@ -2472,3 +2472,15 @@ Started GET "/assets/back.png" for 127.0.0.1 at 2015-07-26 01:51:55 -0500
   [1m[35m (64.0ms)[0m  commit transaction
   [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
   [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."cc" = 1140876239[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"  WHERE "users"."cc" = 1140876239
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "state" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["state", "desactivado"], ["updated_at", "2015-07-26 07:01:08.436050"]]
+  [1m[36m (71.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."cc" = 1140876239  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1

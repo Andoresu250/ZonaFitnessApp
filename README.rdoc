@@ -58,5 +58,16 @@ Ejemplo:
 Este seria un ejemplo de CallBack para el controlador de las clases.
 
 
+== Update Maquina de estado para stado de usuarios (V4.1)
 
+	Existen 2 tipos de usuarios "activos" y "desactivados".
 
+	Los metodos para realizar estas acciones son(Por consola):
+
+	-User.where(:cc => 1140876239).first.activar! (para activar un usuario y guardar el cambio)
+	-User.where(:cc => 1140876239).first.desactivar! (para desactivar un usuario y guardar el cambio)
+
+	Tambien hay 2 metodos para validar el estado del usuario (Boleano)
+
+	-User.where(:cc => 1140876239).first.may_activar? (Si el usuario esta desactivado retornara true)
+	-User.where(:cc => 1140876239).first.may_desactivar? (Si el usuario esta activado retornara true)

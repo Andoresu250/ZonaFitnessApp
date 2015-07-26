@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   
   devise_for :users, controllers: {registrations: 'registrations'}
-  
+  #resources :articles
     #get "/articles" index
     #post "/articles" create
     #delete "/articles/:id" destroy
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     #get "/articles/:id/edit edit"
     #patch "/articles/:id" update
     #put "/articles/:id" update 
+
+  #Para la maquina de estados
+  # put "/admins/:id/activar", to: "user#activar"
+  #PENDIENTE: Agregar la accion activar en el controlador del admin
 
   #get "rutaPersonalizada", to: "controlador#metodo"
 
