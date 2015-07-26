@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   
   devise_for :users, controllers: {registrations: 'registrations'}
-  resources :articles
+  
     #get "/articles" index
     #post "/articles" create
     #delete "/articles/:id" destroy

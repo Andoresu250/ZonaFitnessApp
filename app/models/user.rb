@@ -5,4 +5,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
      include PermissionsConcern
+     include AASM
+
+     aasm column: "state" do 
+     	state :desactivado, initial: true
+     	state :activo
+
+     	event :activar do
+     		transitions from: :desactivado, to: :activo
+     	end
+
+     	event :desactivar do 
+ 			transitions from: :activo, to: :desactivado
+     	end
+     end
 end

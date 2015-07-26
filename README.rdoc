@@ -2,7 +2,7 @@
 
 Antes que nada:
 
-- bundle install prueba
+- bundle install 
 - rake db:migrate
 
 == Update Permisos de usuarios (V4.0)

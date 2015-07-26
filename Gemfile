@@ -18,6 +18,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass'
 gem 'phonegap-rails'
 gem 'devise'
+gem 'aasm'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
