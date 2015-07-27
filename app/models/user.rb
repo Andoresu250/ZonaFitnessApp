@@ -18,5 +18,15 @@ class User < ActiveRecord::Base
      	event :desactivar do 
  			transitions from: :activo, to: :desactivado
      	end
+
      end
+
+    def self.search(search)
+      if search
+        where('name LIKE ? OR cc = ? OR state = ?', "%#{search}%", "#{search}", "#{search}")        
+      else
+        all
+      end
+    end
+
 end

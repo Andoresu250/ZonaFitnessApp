@@ -6,19 +6,21 @@ class ApplicationController < ActionController::Base
 
 	protected
 	def authenticate_normal_user!
-		user_signed_in? && current_user.is_normal_user?		
+		#LOGIN PATH
+		redirect_to root_path unless user_signed_in? && current_user.is_normal_user?		
 	end
 
 	def authenticate_trainer!
-		user_signed_in? && current_user.is_trainer?
+		#LOGIN PATH
+		redirect_to root_path unless user_signed_in? && current_user.is_trainer?
 	end
 
 	def authenticate_admin!
-		user_signed_in? && current_user.is_admin?
+		redirect_to root_path unless user_signed_in? && current_user.is_admin?
 	end
 
 	def authenticate_super_admin!
-		user_signed_in? && current_user.is_super_admin?
+		redirect_to root_path unless user_signed_in? && current_user.is_super_admin?
 	end
 
 	protected

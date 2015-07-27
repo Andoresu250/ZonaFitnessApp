@@ -19,6 +19,9 @@ gem 'font-awesome-sass'
 gem 'phonegap-rails'
 gem 'devise'
 gem 'aasm'
+gem 'sortable-table'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
