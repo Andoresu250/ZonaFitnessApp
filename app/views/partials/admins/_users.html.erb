@@ -1,0 +1,48 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>
+        	<%= render "partials/admins/th", name: "name", nombre:"Nombre" %>
+        </th>
+        <th>        	
+        	<%= render "partials/admins/th", name: "cc", nombre:"Cedula" %>
+        </th>
+        <th>		        	
+        	<%= render "partials/admins/th", name: "number_of_classes", nombre:"No. Clases" %>
+        </th>
+        <th>		        	
+        	<%= render "partials/admins/th", name: "state", nombre:"Estado" %>
+        </th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+		<% @users.each do |user| %>	
+    		<%= form_for (user), url: user_path(user), html: {method: :put} do |f|%>		
+		      <tr>
+		      	<td> <%= f.text_field :name, placeholder: "Nombre completo", class:"form-control"  %> </td>
+		      	<td> <%= f.text_field :cc, placeholder: "Nombre completo", class:"form-control"  %> </td>
+		      	<td> <%= f.number_field :number_of_classes, class:"form-control", :step => 'any' %> </td>	
+		      	<td>
+		      		<div align="center">
+				  	 	<% if user.may_activar? %>							
+							<%= link_to '<i class="fa fa-ban"></i>'.html_safe, "/admins/#{user.id}/activar" , method: :put, :class => "btn btn-warning" %>
+						<% else %>
+							<%= link_to '<i class="fa fa-check"></i>'.html_safe, "/admins/#{user.id}/desactivar" , method: :put, :class => "btn btn-primary" %>
+							
+						<% end %>
+					</div> 								
+				</td>						
+				<td>
+					<%= button_tag(type: 'submit', class: "btn btn-success") do %>
+						<i class="fa fa-floppy-o"></i>
+					<% end %>
+					<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, user, method: :delete, :class => "btn btn-danger" %>
+				</td>
+				
+	      	<% end %>
+      <% end %>
+	</table>
+ <div align="center">
+ 	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</div>

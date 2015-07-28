@@ -10,62 +10,8 @@
 		  </p>
 		<% end %>
 
-		<table class="table">
-		    <thead>
-		      <tr>
-		        <th>
-		        	<%= link_to "Nombre", :sort => "name"%>
-		        	<%= link_to '<i class="fa fa-chevron-up"></i>'.html_safe, :sort => "name", :direction =>"acs" %>
-		        	<%= link_to '<i class="fa fa-chevron-down"></i>'.html_safe, :sort => "name", :direction =>"desc" %>
-		        </th>
-		        <th>
-		        	Cedula
-		        	<%= link_to '<i class="fa fa-chevron-up"></i>'.html_safe, :sort => "cc", :direction =>"acs" %>
-		        	<%= link_to '<i class="fa fa-chevron-down"></i>'.html_safe, :sort => "cc", :direction =>"desc" %>
-		        </th>
-		        <th>
-		        	No. Clases
-		        	<%= link_to '<i class="fa fa-chevron-up"></i>'.html_safe, :sort => "number_of_classes", :direction =>"acs" %>
-		        	<%= link_to '<i class="fa fa-chevron-down"></i>'.html_safe, :sort => "number_of_classes", :direction =>"desc" %>
-		        </th>
-		        <th>
-		        	Estado
-		        	<%= link_to '<i class="fa fa-chevron-up"></i>'.html_safe, :sort => "state", :direction =>"acs" %>
-		        	<%= link_to '<i class="fa fa-chevron-down"></i>'.html_safe, :sort => "state", :direction =>"desc" %>
-		        </th>
-		        <th>Acciones</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-	    		<% @users.each do |user| %>	
-		    		<%= form_for (user), url: user_path(user), html: {method: :put} do |f|%>		
-				      <tr>
-				      	<td> <%= f.text_field :name, placeholder: "Nombre completo", class:"form-control"  %> </td>
-				      	<td> <%= f.text_field :cc, placeholder: "Nombre completo", class:"form-control"  %> </td>
-				      	<td> <%= f.number_field :number_of_classes, class:"form-control", :step => 'any' %> </td>	
-				      	<td>
-				      		<div align="center">
-						  	 	<% if user.may_activar? %>							
-									<%= link_to '<i class="fa fa-ban"></i>'.html_safe, "/admins/#{user.id}/activar" , method: :put, :class => "btn btn-warning" %>
-								<% else %>
-									<%= link_to '<i class="fa fa-check"></i>'.html_safe, "/admins/#{user.id}/desactivar" , method: :put, :class => "btn btn-primary" %>
-									
-								<% end %>
-							</div> 								
-						</td>						
-						<td>
-							<%= link_to '<i class="fa fa-floppy-o"></i>'.html_safe, user, method: :update, :class => "btn btn-success" %> 	
-							<%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, user, method: :delete, :class => "btn btn-danger" %>
-						</td>
-						
-			      	<% end %>
-		      <% end %>
-	  	</table>
-	  	 <div align="center">
-	  	 	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
-		</div> 
-	  	
-		
-
+		<div id="users">
+			 <%= render "partials/admins/users" %>
+		</div>
   	</div>
 </div>

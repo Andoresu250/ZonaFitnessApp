@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
 	respond_to :html
 	
 	def index
-		@users = User.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 3)
+		@users = User.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page], :per_page => 2)
 		respond_with(@users)
 	end	
 
@@ -56,17 +56,17 @@ class AdminsController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-	private    
+	private    		
 
 	def sort_column
-	  User.column_names.include?(params[:sort]) ? params[:sort] : "name"
-	end 	
+    	User.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  	end
+  
+  	def sort_direction
+    	%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  	end
 
-	def sort_direction
-	  %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
-	end
-
-	def user_params
+  	def user_params
 		params.require(:user).permit(:name, :cc, :number_of_classes, :state)
 	end
 end
